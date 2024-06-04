@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ character.name }}</title>
+</head>
+<body>
+    <h2>{{ character.name }}</h2>
+    <p>Прозвище: {{ character.nickname }}</p>
+    <p>Статус: {{ character.status }}</p>
+    <p>Пол: {{ character.gender }}</p>
+    <p>Ориентация: {{ character.orientation }}</p>
+    <p>Раса: {{ character.race }}</p>
+    <p>Биография: {{ character.bio }}</p>
+    <p>Личность: {{ character.personality }}</p>
+    <p>Сильные стороны: {{ character.strengths }}</p>
+    <p>Слабые стороны: {{ character.weaknesses }}</p>
+    <p>Творчество: {{ character.art }}</p>
+    <p>Класс: {{ character.class_type }}</p>
+    <p>Местонахождение: {{ character.location }}</p>
+    {% if current_user.is_authenticated and current_user.role == 'Анкетолог' %}
+        <a href="{{ url_for('edit', character_id=character.id) }}">Редактировать персонажа</a>
+    {% endif %}
+</body>
+</html>

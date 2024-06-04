@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Персонажи</title>
+</head>
+<body>
+    <h2>Персонажи</h2>
+    <ul>
+        {% for character in characters %}
+            <li><a href="{{ url_for('character', character_id=character.id) }}">{{ character.name }}</a></li>
+        {% endfor %}
+    </ul>
+    {% if current_user.is_authenticated and current_user.role == 'Анкетолог' %}
+        <a href="{{ url_for('create') }}">Создать нового персонажа</a>
+    {% endif %}
+</body>
+</html>

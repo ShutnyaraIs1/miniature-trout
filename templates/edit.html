@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if character %}Редактировать{% else %}Создать{% endif %} Персонажа</title>
+</head>
+<body>
+    <h2>{% if character %}Редактировать{% else %}Создать{% endif %} Персонажа</h2>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.name.label }} {{ form.name() }}
+        </div>
+        <div>
+            {{ form.nickname.label }} {{ form.nickname() }}
+        </div>
+        <div>
+            {{ form.status.label }} {{ form.status() }}
+        </div>
+        <div>
+            {{ form.gender.label }} {{ form.gender() }}
+        </div>
+        <div>
+            {{ form.orientation.label }} {{ form.orientation() }}
+        </div>
+        <div>
+            {{ form.race.label }} {{ form.race() }}
+        </div>
+        <div>
+            {{ form.bio.label }} {{ form.bio() }}
+        </div>
+        <div>
+            {{ form.personality.label }} {{ form.personality() }}
+        </div>
+        <div>
+            {{ form.strengths.label }} {{ form.strengths() }}
+        </div>
+        <div>
+            {{ form.weaknesses.label }} {{ form.weaknesses() }}
+        </div>
+        <div>
+            {{ form.art.label }} {{ form.art() }}
+        </div>
+        <div>
+            {{ form.class_type.label }} {{ form.class_type() }}
+        </div>
+        <div>
+            {{ form.location.label }} {{ form.location() }}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+</body>
+</html>
